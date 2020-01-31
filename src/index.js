@@ -1,4 +1,4 @@
-const pojo = require('./data');
+const pojo = require('../data');
 let data = pojo();
 //  
 
