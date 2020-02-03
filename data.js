@@ -113,7 +113,7 @@ const pojo = () => {
         cat: "energy",
         name: "Neo",
         value: 4,
-        icon: "../img/NEO.png",
+        icon: "img/NEO.png",
         desc: `
         Exxon Mobil Corp. engages in the exploration, development, and distribution of oil, gas, and petroleum products.`,
         link: "Here",
