@@ -10,7 +10,6 @@ let centerY = height * 0.5;
 let strength = 0.05;
 let focusedNode;
 
-let format = d3.format(",d");
 
 let scaleColor = d3.scaleOrdinal(d3.schemeCategory20);
 
@@ -18,17 +17,15 @@ let scaleColor = d3.scaleOrdinal(d3.schemeCategory20);
 let pack = d3
   .pack()
   .size([width, height])
-  .padding(1.5);
+  .padding(2.0);
 
 let forceCollide = d3.forceCollide(d => d.r + 1);
 
 // use the force
 let simulation = d3
   .forceSimulation()
-  // .force('link', d3.forceLink().id(d => d.id))
   .force("charge", d3.forceManyBody())
   .force("collide", forceCollide)
-  // .force('center', d3.forceCenter(centerX, centerY))
   .force("x", d3.forceX(centerX).strength(strength))
   .force("y", d3.forceY(centerY).strength(strength));
 
@@ -56,7 +53,7 @@ let nodes = pack(root)
       y: centerY + (node.y - centerY) * 3,
       r: 0, // for tweening
       radius: node.r, //original radius
-      id: data.cat + "." + data.name.replace(/\s/g, "-"),
+      id: data.cat,
       cat: data.cat,
       name: data.name,
       value: data.value,
@@ -96,11 +93,13 @@ let node = svg
 
 node
   .append("circle")
-  .attr("id", d => d.id)
+  // .attr("id", d => d.id)
   .attr("r", 0)
   .style("fill", d => scaleColor(d.cat))
+  .attr("id", d => d.cat)
+  .style("opacity", 0.7)
   .transition()
-  .duration(2000)
+  .duration(2000) // 3000??
   .ease(d3.easeElasticOut)
   .tween("circleIn", d => {
     let i = d3.interpolateNumber(0, d.radius);
@@ -123,12 +122,12 @@ node
   .classed("node-icon", true)
   .attr("clip-path", d => `url(#clip-${d.id})`)
   .selectAll("tspan")
-  // .data(d => d.icon.split(';'))
+  .data(d => d.icon.split(';')) // Comment Out ??? Purpose
   .enter()
-  .append("tspan")
-  .attr("x", 0)
-  .attr("y", (d, i, nodes) => 13 + (i - nodes.length / 2 - 0.5) * 10)
-  .text(name => name);
+  // .append("tspan")
+  // .attr("x", 0)
+  // .attr("y", (d, i, nodes) => 13 + (i - nodes.length / 2 - 0.5) * 10)
+  // .text(name => name);
 
 // display image as circle icon
 node
@@ -142,7 +141,7 @@ node
   .attr("height", d => d.radius * 2 * 0.7)
   .attr("width", d => d.radius * 2 * 0.7);
 
-node.append("title").text(d => d.cat + "::" + d.name + "\n" + format(d.value));
+// node.append("title").text(d => d.cat + "::" + d.name + "\n" + format(d.value));
 
 let legendOrdinal = d3
   .legendColor()
@@ -204,15 +203,18 @@ infoBox
   .attr("target", "_blank")
   .html(d => d.link);
 
+// ---------------------------------------------
+
+
 node.on("click", currentNode => {
   d3.event.stopPropagation();
-  console.log("currentNode", currentNode);
+
   let currentTarget = d3.event.currentTarget; // the <g> el
 
   if (currentNode === focusedNode) {
-    // no focusedNode or same focused node is clicked
     return;
   }
+
   let lastNode = focusedNode;
   focusedNode = currentNode;
 
@@ -264,17 +266,19 @@ node.on("click", currentNode => {
       $currentGroup.select(".circle-overlay").classed("hidden", false);
       $currentGroup.select(".node-icon").classed("node-icon--faded", true);
     })
-    .on("interrupt", () => {
-      console.log("move interrupt", currentNode);
-      currentNode.fx = null;
-      currentNode.fy = null;
-      simulation.alphaTarget(0);
-    });
+    // .on("interrupt", () => {
+    //   console.log("move interrupt", currentNode);
+    //   currentNode.fx = null;
+    //   currentNode.fy = null;
+    //   simulation.alphaTarget(0);
+    // });
 });
 
 // blur
 d3.select(document).on("click", () => {
   let target = d3.event.target;
+
+
   // check if click on document but not on the circle overlay
   if (!target.closest("#circle-overlay") && focusedNode) {
     focusedNode.fx = null;
@@ -295,17 +299,46 @@ d3.select(document).on("click", () => {
         focusedNode = null;
         simulation.alphaTarget(0);
       })
-      .on("interrupt", () => {
-        simulation.alphaTarget(0);
-      });
+      // .on("interrupt", () => {
+      //   simulation.alphaTarget(0);
+      // });
 
     // hide all circle-overlay
     d3.selectAll(".circle-overlay").classed("hidden", true);
-    d3.selectAll(".node-icon").classed("node-icon--faded", false);
+    d3.selectAll(".node-icon").classed("node-icon--faded", false)
+        .classed("node-icon--faded", false)
+        .style("opacity", 1);
   }
 });
 
-addEventListener.DOMContentLoaded("")
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll(".legendCells > g").forEach((el, idx) => {
+    el.setAttribute('id', el.textContent)
+  });
+})
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  var clicked = false;
+  console.log(clicked)
+  document.querySelectorAll(".legendCells > g").forEach((el) => {
+    el.onclick = function () {
+
+      node.filter(function (d) {
+        return d.id !== el.id
+      }).style("opacity", 0.1)
+
+      node.filter(function (d) {
+        return d.id === el.id
+      }).style("opacity", 1)
+
+      clicked = true;
+    }
+
+    
+  });
+})
 
 function ticked() {
   node
@@ -318,18 +351,20 @@ function ticked() {
 ///////
 
 // INCORPORATE THE RENERING OF THE AXIOS CALL here
-axios.get(`/players`)
-  .then((res) => {
-    console.log(res.data.api)
-    return res.data.api;
-  })
-  .then(data => {
+// axios.get(`/players`)
+//   .then((res) => {
+//     console.log(res.data.api)
+//     return res.data.api;
+//   })
+//   .then(data => {
 
-    console.log(data.players);
-    let playersIndex = "";
-    data.players.forEach(player => {
-      let name = `<div class="p-index-item" id="player-${player.playerId}">${player.lastName}, ${player.firstName}</div>`
-      playersIndex = playersIndex.concat(name);
-    })
-    this.container.innerHTML = `${playersIndex}`;
-  })
+//     console.log(data.players);
+//     let playersIndex = "";
+//     data.players.forEach(player => {
+//       let name = `<div class="p-index-item" id="player-${player.playerId}">${player.lastName}, ${player.firstName}</div>`
+//       playersIndex = playersIndex.concat(name);
+//     })
+//     this.container.innerHTML = `${playersIndex}`;
+//   })
+
+

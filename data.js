@@ -45,7 +45,7 @@ const pojo = () => {
         linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/BNB"
       },
       {
-        cat: "industrial",
+        cat: "Industrials",
         name: "Litecoin",
         value: 16,
         icon: "img/ltc.png",
@@ -100,7 +100,7 @@ const pojo = () => {
         linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/DASH"
       },
       {
-        cat: "industrial",
+        cat: "Industrials",
         name: "Ontology",
         value: 10,
         icon: "img/ONT.png",
