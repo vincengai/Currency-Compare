@@ -252,7 +252,6 @@ node.on("click", currentNode => {
       let iy = d3.interpolateNumber(currentNode.y, centerY);
       let ir = d3.interpolateNumber(currentNode.r, centerY * 0.5);
       return function(t) {
-        // console.log('i', ix(t), iy(t));
         currentNode.fx = ix(t);
         currentNode.fy = iy(t);
         currentNode.r = ir(t);
@@ -305,6 +304,8 @@ d3.select(document).on("click", () => {
     d3.selectAll(".node-icon").classed("node-icon--faded", false);
   }
 });
+
+addEventListener.DOMContentLoaded("")
 
 function ticked() {
   node
