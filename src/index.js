@@ -11,7 +11,17 @@ let strength = 0.05;
 let focusedNode;
 
 
-let scaleColor = d3.scaleOrdinal(d3.schemeCategory20);
+let scaleColor = d3.scaleOrdinal([
+  `#5386E4`,
+  `#674A8E`,
+  `#9F98E2`,
+  `#B8B8C1`,
+  `#DDCAB8`,
+  `#C3C3C3`,
+  `#ABA8B2`,
+  `#949396`,
+  `#4C4B63`
+]);
 
 // use pack to calculate radius of the circle
 let pack = d3
@@ -65,7 +75,7 @@ let nodes = pack(root)
   });
 simulation.nodes(nodes).on("tick", ticked);
 
-svg.style("background-color", "#eee");
+// svg.style("background-color", "#eee");
 let node = svg
   .selectAll(".node")
   .data(nodes)

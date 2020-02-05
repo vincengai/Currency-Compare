@@ -4,6 +4,8 @@ text {
   transition: all 0.3s;
 }
 
+
+
 .label {
   fill: #000;
 }
@@ -44,7 +46,7 @@ text {
     transform: scale(0.6) rotate(-15deg);
   }
   100% {
-    opacity: 1;
+    opacity: 0.2;
     transform: scale(1) rotate(0);
   }
 }
