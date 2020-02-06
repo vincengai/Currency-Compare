@@ -12,13 +12,13 @@ let focusedNode;
 
 
 let scaleColor = d3.scaleOrdinal([
-  `#5386E4`,
-  `#674A8E`,
-  `#9F98E2`,
+  `#353544`,
+  `#98A5A5`,
+  `#D5786F`,
   `#B8B8C1`,
-  `#DDCAB8`,
-  `#C3C3C3`,
-  `#ABA8B2`,
+  `#9B6079`,
+  `#5D7177`,
+  `#424751`,
   `#949396`,
   `#4C4B63`
 ]);
@@ -164,6 +164,7 @@ let legend = svg
   .attr("text-anchor", "start")
   .attr("transform", "translate(20,30)")
   .style("font-size", "12px")
+  .style("fill", "#B9CCCC")
   .call(legendOrdinal);
 
 let sizeScale = d3
@@ -184,6 +185,8 @@ let legend2 = svg
   .attr("text-anchor", "start")
   .attr("transform", "translate(150, 25)")
   .style("font-size", "12px")
+  .style("fill", "#B9CCCC")
+
   .call(legendSize);
 
 let infoBox = node
