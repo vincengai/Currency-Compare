@@ -165,7 +165,7 @@ let legend = svg
   .attr("transform", "translate(20,30)")
   .style("font-size", "12px")
   .style("fill", "#B9CCCC")
-  .call(legendOrdinal);
+  .call(legendOrdinal)
 
 let sizeScale = d3
   .scaleOrdinal()
