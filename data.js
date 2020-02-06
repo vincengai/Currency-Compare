@@ -48,7 +48,7 @@ const pojo = () => {
         cat: "Industrials",
         name: "Litecoin",
         value: 16,
-        icon: "img/LTC.png",
+        icon: "img/BNB.svg",
         desc: `
         Caterpillar, Inc. engages in the manufacture of construction and mining equipment, 
         diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives.`,
