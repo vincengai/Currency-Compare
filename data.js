@@ -50,7 +50,7 @@ const pojo = () => {
         value: 16,
         icon: "img/LTC.png",
         desc: `
-        Caterpillar, Inc. engages in the manufacture of construction and mining equipment, 
+        Caterpiteste testerllar, Inc. engages in the manufacture of construction and mining equipment, 
         diesel and natural gas engines, industrial gas turbines, and diesel-electric locomotives.`,
         link: "Here",
         linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/LTC"
