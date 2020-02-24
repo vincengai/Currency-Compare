@@ -10,7 +10,7 @@ const pojo = () => {
         As the flagship cryptocurrency, Bitcoin maintains the largest market capitalization and liquidity making it the “reserve” 
         currency against which all other crypto-currencies trade against. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/BTC"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/BTC"
       },
       {
         cat: "Platform",
@@ -21,7 +21,7 @@ const pojo = () => {
         Ethereum is the original and still dominant platform for issuing smart contracts that enable ICOs and 
         decentralized applications (dApps) on a public blockchain via the Ethereum Virtual Machine and Solidity. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/ETH"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/ETH"
       },
       {
         cat: "Currency",
@@ -32,7 +32,7 @@ const pojo = () => {
       Apple, Inc. engages in the design, manufacture, and sale of smartphones, personal 
       computers, tablets, wearables and accessories, and other variety of related services.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/BCH"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/BCH"
       },
       {
         cat: "Ecosystem",
@@ -43,7 +43,7 @@ const pojo = () => {
         The BNB coin itself has multiple forms of utility, essentially being the underlying 
         gas that powers the Binance Ecosystem. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/BNB"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/BNB"
       },
       {
         cat: "Currency",
@@ -54,7 +54,7 @@ const pojo = () => {
         Litecoin serves a similar use-case function as Bitcoin, attempting to be a digital store of value 
         and medium of exchange but with the advantage of faster block times (which makes transactions faster to settle)`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/LTC"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/LTC"
       },
       {
         cat: "Ecosystem",
@@ -65,7 +65,7 @@ const pojo = () => {
         Chevron Corp. engages in the provision of administrative, financial management, 
         and technology support for energy and chemical operations.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/TRX"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/TRX"
       },
       {
         cat: "Social Network",
@@ -75,7 +75,7 @@ const pojo = () => {
         desc: `
         ICON is an interchain blockchain that connects various blockchains such as Bitcoin, Ethereum, and Qtum. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/ICX"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/ICX"
       },
       {
         cat: "Misc.",
@@ -86,7 +86,7 @@ const pojo = () => {
         Chevron Corp. engages in the provision of administrative, financial management, 
         and technology support for energy and chemical operations.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/WRX"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/WRX"
       },
       {
         cat: "Currency",
@@ -97,7 +97,7 @@ const pojo = () => {
         Main objective has always been to increase the intrinsic value of its currency and trading technologies, 
         as well as taking the adoption of cryptocurrencies to a new level. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/XRP"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/XRP"
       },
       {
         cat: "Misc.",
@@ -108,7 +108,7 @@ const pojo = () => {
         Stellar Lumens is as a bridging currency and liquidity provider between users 
         and chains who have no common currency to complete exchanges.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/XLM"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/XLM"
       },
       {
         cat: "Currency",
@@ -118,7 +118,7 @@ const pojo = () => {
         desc: `
         Dash is an open source peer-to-peer cryptocurrency with a strong focus on the payments industry.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/DASH"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/DASH"
       },
       {
         cat: "Currency",
@@ -129,7 +129,7 @@ const pojo = () => {
        Monero is a fork of Bytecoin that emphasises the obfuscation of private data 
        making for a blockchain with a public ledger with open access for broadcasting and writing transactions but with complete privacy for users.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/XMR"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/XMR"
 
       },
       {
@@ -141,7 +141,7 @@ const pojo = () => {
        The IOTA Tangle is a quantum-proof Directed Acyclic Graph, with no fees on transactions & no fixed limit 
        on how many transactions can be confirmed per second in the network. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/IOTA"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/IOTA"
       },
       {
         cat: "Platform",
@@ -151,7 +151,7 @@ const pojo = () => {
         desc: `
         Ontology is a public blockchain project with distributed data collaboration aiming to build a peer to peer cross system trust network. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/ONT"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/ONT"
       },
       {
         cat: "Platform",
@@ -162,7 +162,7 @@ const pojo = () => {
         The main goal of the platform is to implement all the best features of Litecoin, bitcoin and ethereum into one cryptocurrency; 
         complementing the resulting mixture with a number of additional innovative technologies.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/ADA"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/ADA"
       },
       {
         cat: "Platform",
@@ -172,7 +172,7 @@ const pojo = () => {
         desc: `
         ICON is an interchain blockchain that connects various blockchains such as Bitcoin, Ethereum, and Qtum. `,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/NEO"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/NEO"
       },
       {
         cat: "Platform",
@@ -183,7 +183,7 @@ const pojo = () => {
         EOS is a dApp and Smart Contracts platform that has fast and free transactions due to the Delegated 
         Proof of Stake consensus model and the pricing of finite network resources via staking.`,
         link: "Invest here",
-        linkUrl: "http://coinbase-appacademy.herokuapp.com/#/coins/EOS"
+        linkUrl: "http://binance-xchange.herokuapp.com/#/coins/EOS"
       }
     ];
 }
