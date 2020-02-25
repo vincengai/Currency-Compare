@@ -330,7 +330,7 @@ d3.select(document).on("click", () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll(".legendCells > g").forEach((el, idx) => {
+  document.querySelectorAll(".legendCells > g:first-child").forEach((el, idx) => {
     el.setAttribute('id', el.textContent)
   });
 })
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   var clicked = false;
 
-  document.querySelectorAll(".legendCells > g").forEach((el) => {
+  document.querySelectorAll(".legendCells > g:first-child").forEach((el) => {
     el.onclick = function () {
 
       node.filter(function (d) {
